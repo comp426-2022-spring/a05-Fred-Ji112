@@ -1,16 +1,18 @@
 // Place your server entry point code here
 
-// Serve static HTML files
-app.use(express.static('./public'));
 
 const express = require('express');
 const app = express();
 const db = require('./src/services/database.js');
 const fs = require('fs');
 
+// Serve static HTML files
+app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-pp.use(express.static('./www'));
+app.use(express.static('./www'));
+
+
 
 const min = require('minimist');
 const args = min(process.argv.slice(2));
